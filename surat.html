@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Undangan Pernikahan Rafi & Dani</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #f8f3ed;
+      color: #4a4038;
+      text-align: center;
+    }
+
+    .cover {
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        linear-gradient(rgba(60, 45, 35, 0.45), rgba(60, 45, 35, 0.45)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80")
+        center/cover;
+      color: white;
+      padding: 20px;
+    }
+
+    .cover-content {
+      max-width: 600px;
+    }
+
+    .cover h1 {
+      font-size: 55px;
+      margin: 15px 0;
+      font-weight: normal;
+    }
+
+    .cover p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      background: #c19a6b;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .intro h2 {
+      font-size: 38px;
+      color: #9a744b;
+      margin: 20px 0;
+    }
+
+    .names {
+      font-size: 45px;
+      color: #8b6744;
+      margin: 25px 0;
+    }
+
+    .date {
+      font-size: 20px;
+      margin: 15px 0;
+    }
+
+    .card {
+      background: white;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 40px 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 28px;
+      color: #9a744b;
+      margin-bottom: 15px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .time-box {
+      background: #9a744b;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      min-width: 80px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    footer {
+      background: #4a4038;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    @media (max-width: 600px) {
+      .cover h1 {
+        font-size: 40px;
+      }
+
+      .names {
+        font-size: 34px;
+      }
+
+      section {
+        padding: 60px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-content">
+      <p>THE WEDDING OF</p>
+
+      <h1>Rafi & Dani</h1>
+
+      <p>Dengan penuh kebahagiaan, kami mengundang Anda untuk hadir di hari istimewa kami.</p>
+
+      <button class="btn" onclick="bukaUndangan()">
+        Buka Undangan
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ISI UNDANGAN -->
+  <main id="undangan" style="display:none;">
+
+    <section>
+      <div class="intro">
+
+        <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+
+        <h2>Rafi & Dani</h2>
+
+        <p>
+          Dengan memohon rahmat dan ridho Allah SWT,
+          kami bermaksud mengundang Bapak/Ibu/Saudara/i
+          untuk hadir dalam acara pernikahan kami.
+        </p>
+
+        <div class="names">
+          Rafi<br>
+          <small>&</small><br>
+          Dani
+        </div>
+
+        <p class="date">
+          Minggu, 20 Desember 2026
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- COUNTDOWN -->
+    <section>
+      <div class="card">
+
+        <h3>Menuju Hari Bahagia</h3>
+
+        <div class="countdown">
+
+          <div class="time-box">
+            <span id="days">0</span>
+            Hari
+          </div>
+
+          <div class="time-box">
+            <span id="hours">0</span>
+            Jam
+          </div>
+
+          <div class="time-box">
+            <span id="minutes">0</span>
+            Menit
+          </div>
+
+          <div class="time-box">
+            <span id="seconds">0</span>
+            Detik
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ACARA -->
+    <section>
+
+      <div class="card">
+
+        <h3>Akad Nikah</h3>
+
+        <p>🗓 Minggu, 20 Desember 2026</p>
+        <p>⏰ 09.00 WIB</p>
+        <p>📍 Masjid Al-Ikhlas</p>
+        <p>banten, Indonesia</p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>Resepsi</h3>
+
+        <p>🗓 Minggu, 20 Desember 2026</p>
+        <p>⏰ 11.00 - 14.00 WIB</p>
+        <p>📍 Gedung Serbaguna Bahagia</p>
+        <p>banten, Indonesia</p>
+
+        <a
+          class="btn"
+          href="https://maps.google.com"
+          target="_blank">
+          Lihat Lokasi
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- GALERI -->
+    <section>
+
+      <h2>Our Memories</h2>
+
+      <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80">
+
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80">
+
+        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=600&q=80">
+
+      </div>
+
+    </section>
+
+
+    <!-- PENUTUP -->
+    <section>
+
+      <div class="intro">
+
+        <p>
+          Merupakan suatu kehormatan dan kebahagiaan
+          bagi kami apabila Bapak/Ibu/Saudara/i
+          berkenan hadir dan memberikan doa restu.
+        </p>
+
+        <br>
+
+        <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+
+        <div class="names">
+          Rafi & Dani
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      <p>© 2026 Rafi & Dani Wedding</p>
+    </footer>
+
+  </main>
+
+
+  <script>
+
+    // Membuka undangan
+    function bukaUndangan() {
+      document.getElementById("undangan").style.display = "block";
+
+      document.getElementById("undangan")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+    }
+
+
+    // Countdown
+    const tanggalPernikahan =
+      new Date("December 20, 2026 09:00:00").getTime();
+
+
+    const countdown = setInterval(function () {
+
+      const sekarang = new Date().getTime();
+
+      const jarak = tanggalPernikahan - sekarang;
+
+      const hari = Math.floor(
+        jarak / (1000 * 60 * 60 * 24)
+      );
+
+      const jam = Math.floor(
+        (jarak % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+      );
+
+      const menit = Math.floor(
+        (jarak % (1000 * 60 * 60))
+        / (1000 * 60)
+      );
+
+      const detik = Math.floor(
+        (jarak % (1000 * 60))
+        / 1000
+      );
+
+
+      document.getElementById("days").innerHTML =
+        hari;
+
+      document.getElementById("hours").innerHTML =
+        jam;
+
+      document.getElementById("minutes").innerHTML =
+        menit;
+
+      document.getElementById("seconds").innerHTML =
+        detik;
+
+
+      if (jarak < 0) {
+
+        clearInterval(countdown);
+
+        document.querySelector(".countdown")
+          .innerHTML =
+          "<h3>Acara sedang berlangsung ❤️</h3>";
+
+      }
+
+    }, 1000);
+
+  </script>
+
+</body>
+</html>
